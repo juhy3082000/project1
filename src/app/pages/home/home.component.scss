@@ -1,24 +1,12 @@
-.body{
-    margin: 0px;
-    padding: 0px;
+.product {
+    display: flex;
     width: 100%;
-    height: 100vh;
-    background-color: yellow;
-    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 
-    .center{
-        width: 500px;
-        height: 500px;
-        background-color: green;
-        position: absolute;
-        top:50%
-
-        div {
-            width: 100px;
-            height: 100px;
-            background-color:red;
-        }
-        
+    .card {
+        min-width: 18rem;
     }
-
 }

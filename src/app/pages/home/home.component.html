@@ -1,7 +1,57 @@
-<div class="body">
-    <div class="center">
-        <div>
-            
-        </div>
+<div class="container">
+  <div class="product">
+
+
+
+    <div class="card" style="width: 18rem;" *ngFor="let product of products">
+      <img [src]="product.imgUrl" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">₹ {{product.price}}</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+        <a href="#" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click) ="getProductDetails(product)">Product Details</a>
+      </div>
     </div>
+  </div>
 </div>
+<!--Product detail-->
+<!-- Button trigger modal -->
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Product Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-3" style="max-width: 540px;" *ngIf="productDetails">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]="productDetails.imgUrl" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{productDetails.name}}</h5>
+                <p class="price">₹{{productDetails.price}}</p>
+                <p class="card-text">{{productDetails.description}}</p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
